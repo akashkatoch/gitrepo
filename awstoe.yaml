@@ -21,11 +21,11 @@ phases:
       commands:
         - service status httpd
 
-  - name: test
-    steps: ExecuteBash
-    inputs:
-      commands:
-        - service status httpd
+    - name: test
+      steps: ExecuteBash
+      inputs:
+        commands:
+          - service status httpd qqq
 
 
           -
