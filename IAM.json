@@ -1,0 +1,14 @@
+{
+  "Statement" : [
+    {
+      "Effect": "Allow",
+      "Action" : "EC2.describe",
+      "Resource" : "iam:GetRole"
+    },
+    {
+      "Effect": "Allow",
+      "Action" : "EC2.describe",
+      "Resource" : "iam:GetRole"
+    }
+  ]
+}
