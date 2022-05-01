@@ -1,0 +1,10 @@
+name: Building new component
+schemaVersion: 1.0
+phases:
+  - name: test
+    steps:
+      - name : InstallAndValidateCorretto
+        action: ExecuteBash
+        inputs:
+          commands:
+            - sudo systemctl status httpd
