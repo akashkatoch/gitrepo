@@ -1,0 +1,28 @@
+name: Building new component
+schemaVersion: 10.0.0
+phases:
+  - name: build
+    steps:
+      - name: DownloadRemoteFile
+        action: WebDownload
+        maxattempts: 3
+        inputs:
+          - source: https://raw.githubusercontent.com/akashkatoch/mytest/main/new.sh
+            destination: /home/ec2-user
+
+      - name: InstallAndValidateCorretto
+        action: ExecuteBash
+        inputs:
+          commands:
+            - sh /home/ec2-user/new.sh
+  - name: validate
+    steps: ExecuteBash
+    inputs:
+      commands:
+        - service status httpd
+
+    - name: test
+      steps: ExecuteBash
+      inputs:
+        commands:
+          - service status httpd qqq
